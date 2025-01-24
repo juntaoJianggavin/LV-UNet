@@ -1,5 +1,5 @@
 # LLM-TransUNet
-Official Pytorch implementation of the paper ([LV-UNet: A Lightweight and Vanilla Model for Medical Image Segmentation](https://arxiv.org/abs/2408.16886)), which is published at IEEE BIBM2024 ML4BMI workshop.
+Official Pytorch implementation of the paper [LV-UNet: A Lightweight and Vanilla Model for Medical Image Segmentation](https://arxiv.org/abs/2408.16886), which is published at IEEE BIBM2024 ML4BMI workshop.
 
 ## Architecture
 <p align="center">
