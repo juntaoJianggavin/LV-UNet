@@ -1,15 +1,15 @@
 # LLM-TransUNet
-Official Pytorch implementation of the paper [LV-UNet: A Lightweight and Vanilla Model for Medical Image Segmentation](LV-UNet: A Lightweight and Vanilla Model for Medical Image Segmentation), which is published at IEEE BIBM2024 ML4BMI workshop.
+Official Pytorch implementation of the paper [LV-UNet: A Lightweight and Vanilla Model for Medical Image Segmentation]([LV-UNet: A Lightweight and Vanilla Model for Medical Image Segmentation](https://arxiv.org/abs/2408.16886)), which is published at IEEE BIBM2024 ML4BMI workshop.
 
 ## Architecture
 <p align="center">
-<img src="figs/model.png" width=35% height=35% 
+<img src="figs/model.png" width=60% height=60% 
 class="center">
 </p>
 
 
 ## Usage
-## Data Format
+### Data Format
 
 Make sure to put the files as the following structure :
 
@@ -29,8 +29,8 @@ inputs
         ├── ...
 ```
 
-## Training and testing
-### Normal training and testing
+### Training and testing
+#### Normal training and testing
 1. Train the model.
 ```
 python train.py --dataset <dataset name> --name <exp name> --img_ext .png --mask_ext .png --lr 0.001 --epochs 300 --input_w 256 --input_h 256 --b 8
@@ -40,7 +40,7 @@ python train.py --dataset <dataset name> --name <exp name> --img_ext .png --mask
 python val.py --name <exp name>
 ```
 
-### Deep training and testing in the deployment mode
+#### Deep training and testing in the deployment mode
 1. Train the model.
 ```
 python train.py --dataset <dataset name> --name <exp name> --img_ext .png --mask_ext .png --lr 0.001 --epochs 300 --input_w 256 --input_h 256 --b 8 --deep_training
