@@ -1,0 +1,9 @@
+albumentations
+scikit-learn
+opencv-python
+scipy
+timm
+torch==1.11.0a0+gitbc2c6ed
+torchsummary
+torchvision==0.12.0a0+9b5a3fe
+tqdm

@@ -173,7 +173,7 @@ class UpBlock(nn.Module):
 
 
 
-class miniVanillaUNet(nn.Module):
+class LV_UNet(nn.Module):
     def __init__(self, in_chans=3,  dims=[20*4,40*4,60*4,120*4], dims2=[80,40,24,16],
                  drop_rate=0, act_num=1, strides=[2,2,2], deploy=False):
         super().__init__()

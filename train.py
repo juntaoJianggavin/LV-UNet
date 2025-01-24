@@ -2,7 +2,6 @@ import argparse
 import os
 from collections import OrderedDict
 from glob import glob
-
 import pandas as pd
 import torch
 import torch.backends.cudnn as cudnn
@@ -15,7 +14,6 @@ from sklearn.model_selection import train_test_split
 from torch.optim import lr_scheduler
 from tqdm import tqdm
 from albumentations import RandomRotate90,Resize,Flip
-import archs as archs
 import losses
 from dataset import Dataset
 from metrics import iou_score
