@@ -57,13 +57,12 @@ This code-base uses certain code-blocks and helper functions from [UNext]([https
 ## Citations
 
 ``` 
-@misc{jiang2024lvunetlightweightvanillamodel,
-      title={LV-UNet: A Lightweight and Vanilla Model for Medical Image Segmentation}, 
-      author={Juntao Jiang and Mengmeng Wang and Huizhong Tian and Lingbo Cheng and Yong Liu},
-      year={2024},
-      eprint={2408.16886},
-      archivePrefix={arXiv},
-      primaryClass={eess.IV},
-      url={https://arxiv.org/abs/2408.16886}, 
+@inproceedings{jiang2024lv,
+  title={LV-UNet: A Lightweight and Vanilla Model for Medical Image Segmentation},
+  author={Jiang, Juntao and Wang, Mengmeng and Tian, Huizhong and Cheng, Lingbo and Liu, Yong},
+  booktitle={2024 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)},
+  pages={4240--4246},
+  year={2024},
+  organization={IEEE}
 }
 ```
