@@ -52,7 +52,7 @@ python val.py --name <exp name> --deploy
 
 ## Acknowledgements:
 
-This code-base uses certain code-blocks and helper functions from [UNext]([https://github.com/4uiiurz1/pytorch-nested-unet](https://github.com/jeya-maria-jose/UNeXt-pytorch/)) and [VanillaNet]([https://github.com/NVlabs/SegFormer](https://github.com/huawei-noah/VanillaNet)).
+This code-base uses certain code-blocks and helper functions from [UNext](https://github.com/jeya-maria-jose/UNeXt-pytorch/) and [VanillaNet](https://github.com/huawei-noah/VanillaNet).
 
 ## Citations
 
