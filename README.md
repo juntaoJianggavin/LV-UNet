@@ -49,7 +49,7 @@ python train.py --dataset <dataset name> --name <exp name> --img_ext .png --mask
 ```
 2. Evaluate.
 ```
-python test.py --name <exp name> --deploy
+python test.py --name <exp name> --deploy True
 ```
 
 ## Acknowledgements:
