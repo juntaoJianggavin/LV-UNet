@@ -45,7 +45,7 @@ python val.py --name <exp name>
 #### Deep training and testing in the deployment mode
 1. Train the model.
 ```
-python train.py --dataset <dataset name> --name <exp name> --img_ext .png --mask_ext .png --lr 0.001 --epochs 300 --input_w 256 --input_h 256 --b 8 --deep_training
+python train.py --dataset <dataset name> --name <exp name> --img_ext .png --mask_ext .png --lr 0.001 --epochs 300 --input_w 256 --input_h 256 --b 8 --deep_training True
 ```
 2. Evaluate.
 ```
