@@ -48,7 +48,7 @@ def main():
     # Data loading code
     img_ids = glob(os.path.join('inputs', config['dataset'], 'images', '*' + config['img_ext']))
     img_ids = [os.path.splitext(os.path.basename(p))[0] for p in img_ids]
-    train_img_ids, test_img_ids = train_test_split(img_ids, test_size=0.8, random_state=42)
+    train_img_ids, test_img_ids = train_test_split(img_ids, test_size=0.2, random_state=42)
     train_img_ids, val_img_ids = train_test_split(train_img_ids, test_size=0.2, random_state=42)
 
     if args.deploy ==True:
@@ -72,7 +72,6 @@ def main():
         mask_dir=os.path.join('inputs', config['dataset'], 'masks'),
         img_ext=config['img_ext'],
         mask_ext=config['mask_ext'],
-        num_classes=config['num_classes'],
         transform=val_transform)
     val_loader = torch.utils.data.DataLoader(
         val_dataset,
@@ -89,8 +88,7 @@ def main():
     cput = AverageMeter()
 
     count = 0
-    for c in range(config['num_classes']):
-        os.makedirs(os.path.join('outputs', config['name'], str(c)), exist_ok=True)
+    os.makedirs(os.path.join('outputs', config['name']), exist_ok=True)
     with torch.no_grad():
         for input, target, meta in tqdm(val_loader, total=len(val_loader)):
             input = input.cuda()
@@ -107,8 +105,8 @@ def main():
             output[output<0.5]=0
 
             for i in range(len(output)):
-                cv2.imwrite(os.path.join('outputs', config['name'], str(c), meta['img_id'][i] + '.jpg'),
-                                (output[i, c] * 255).astype('uint8'))
+                cv2.imwrite(os.path.join('outputs', config['name'], meta['img_id'][i] + '.jpg'),
+                                (output[i, 0] * 255).astype('uint8'))
 
     print('IoU: %.4f' % iou_avg_meter.avg)
     print('Dice: %.4f' % dice_avg_meter.avg)
