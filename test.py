@@ -52,9 +52,9 @@ def main():
     train_img_ids, val_img_ids = train_test_split(train_img_ids, test_size=0.2, random_state=42)
 
     if args.deploy ==True:
-        model.switch_to_deploy()
         model.load_state_dict(torch.load('models/%s/last_model.pth' %
                                      config['name']))
+        model.switch_to_deploy()
     else:
         model.load_state_dict(torch.load('models/%s/best_model.pth' %
                                      config['name']))
