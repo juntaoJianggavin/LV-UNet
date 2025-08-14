@@ -7,6 +7,8 @@ Official PyTorch implementation of the paper [LV-UNet: A Lightweight and Vanilla
 class="center">
 </p>
 
+## Update
+[2025.8.14] The original code was unorganized and contained many errors. We have made corrections. We apologize for any inconvenience caused.
 
 ## Usage
 ### Data Format
