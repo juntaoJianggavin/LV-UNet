@@ -216,32 +216,31 @@ class LV_UNet(nn.Module):
         for i in range(self.depth):
             self.stages[i].act_learn = m
         for i in range(self.depth):
-            self.stages2[i].act_learn = m
+            self.up_stages1[i].act_learn = m
         for i in range(3):
-            self.stages3[i].act_learn = m
+            self.up_stages2[i].act_learn = m
         for i in range(len(self.final)):
             self.final[i].act_learn = m
-        self.final.act_learn = m
         self.act_learn = m
 
     def forward(self, x):
         x = self.firstconv(x)
         e1 = self.encoder1(x)
         e2 = self.encoder2(e1)
-        e4 = self.encoder3(e2)
+        e3 = self.encoder3(e2)
         encoder=[]
         for i in range(self.depth):
-            encoder.append(e4)
-            e4 = self.stages[i](e4)
+            encoder.append(e3)
+            e3 = self.stages[i](e3)
         for i in range(self.depth):
-            e4 = self.up_stages1[i](e4)
-            e4=e4+encoder[2-i]
-        e4=self.up_stages2[0](e4)+e2
-        e4=self.up_stages2[1](e4)+e1
-        e4= self.up_stages2[2](e4)
+            e3 = self.up_stages1[i](e3)
+            e3=e3+encoder[2-i]
+        e3=self.up_stages2[0](e3)+e2
+        e3=self.up_stages2[1](e3)+e1
+        e3= self.up_stages2[2](e3)
         for i in range(len(self.final)):
-             e4=self.final[i](e4)
-        return e4
+             e3=self.final[i](e3)
+        return e3
 
     def _fuse_bn_tensor(self, conv, bn):
         kernel = conv.weight
