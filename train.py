@@ -78,7 +78,7 @@ def seed_everything(seed: int):
 
 def seed_worker(worker_id):
     # make dataloader workers deterministic
-    worker_seed = torch.initial_seed() % 2**32
+    worker_seed = 42
     np.random.seed(worker_seed)
     random.seed(worker_seed)
 def train(config, train_loader, model, criterion, optimizer):
