@@ -49,8 +49,7 @@ class Dataset(torch.utils.data.Dataset):
         img = cv2.imread(os.path.join(self.img_dir, img_id + self.img_ext))
 
         mask = []
-        mask.append(cv2.imread(os.path.join(self.mask_dir, str(i),
-                        img_id + self.mask_ext), cv2.IMREAD_GRAYSCALE)[..., None])
+        mask.append(cv2.imread(os.path.join(self.mask_dir, img_id + self.mask_ext), cv2.IMREAD_GRAYSCALE)[..., None])
         mask = np.dstack(mask)
 
         if self.transform is not None:
