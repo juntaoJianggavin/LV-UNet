@@ -3,7 +3,7 @@ Official PyTorch implementation of the paper [LV-UNet: A Lightweight and Vanilla
 
 ## Architecture
 <p align="center">
-<img src="figs/model.png" width=70% height=70% 
+<img src="figs/model2.png" width=70% height=70% 
 class="center">
 </p>
 
