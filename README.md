@@ -39,7 +39,7 @@ python train.py --dataset <dataset name> --name <exp name> --img_ext .png --mask
 ```
 2. Evaluate.
 ```
-python val.py --name <exp name>
+python test.py --name <exp name>
 ```
 
 #### Deep training and testing in the deployment mode
